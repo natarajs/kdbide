@@ -14,8 +14,8 @@
               Hello {{name}}
             <label>State</label>
             <select [(value)]="user.state">
-              <option *ngFor="#state of states" [value]="state.abbrev">
-                {{state.abbrev}}
+              <option *ngFor="#state of states" [value]="state">
+                {{state}}
               </option>
             </select>
           </md-input-container>
