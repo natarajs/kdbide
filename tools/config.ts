@@ -6,12 +6,12 @@ import {argv} from 'yargs';
 // Configuration.
 export const ENV                  = argv['env']         || 'dev';
 export const DEBUG                = argv['debug']       || false;
-export const PORT                 = argv['port']        || 5555;
-export const LIVE_RELOAD_PORT     = argv['reload-port'] || 4002;
-export const DOCS_PORT            = argv['docs-port']   || 4003;
+export const PORT                 = argv['port']        || 3000;
+export const LIVE_RELOAD_PORT     = argv['reload-port'] || 14002;
+export const DOCS_PORT            = argv['docs-port']   || 14003;
 export const APP_BASE             = argv['base']        || '/';
 
-export const APP_TITLE            = 'My Angular2 App';
+export const APP_TITLE            = 'Data Prep App';
 
 export const APP_SRC              = 'app';
 export const ASSETS_SRC           = `${APP_SRC}/assets`;
