@@ -11,6 +11,7 @@
     </p>
     State List... Goes here
           <md-input-container class="md-block" flex-gt-sm>
+              Hello {{name}}
             <label>State</label>
             <select [(value)]="user.state">
               <option *ngFor="#state of states" [value]="state.abbrev">
