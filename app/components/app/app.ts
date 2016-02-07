@@ -8,6 +8,7 @@ import {MATERIAL_DIRECTIVES} from 'ng2-material/all';
 
 import {HomeCmp} from '../home/home';
 import {AboutCmp} from '../about/about';
+import {QueryCmp} from '../query/query';
 import {PeopleList} from '../../services/people_list';
 
 @Component({
@@ -20,6 +21,7 @@ import {PeopleList} from '../../services/people_list';
 })
 @RouteConfig([
   { path: '/', component: HomeCmp, as: 'Home' },
-  { path: '/about', component: AboutCmp, as: 'About' }
+  { path: '/about', component: AboutCmp, as: 'About' },
+  { path: '/query', component: QueryCmp, as: 'Query' }
 ])
 export class AppCmp {}
