@@ -22,7 +22,7 @@ export const HOT_LOADER_PORT      = 5578;
 
 export const BOOTSTRAP_MODULE     = ENABLE_HOT_LOADING ? 'hot_loader_main' : 'main';
 
-export const APP_TITLE            = 'My Angular2 App';
+export const APP_TITLE            = 'Data Prep App';
 
 export const APP_SRC              = 'src';
 export const ASSETS_SRC           = `${APP_SRC}/assets`;
@@ -62,14 +62,16 @@ export const DEV_NPM_DEPENDENCIES: InjectableDependency[] = normalizeDependencie
   { src: 'angular2/bundles/angular2.js', inject: 'libs', dest: JS_DEST },
   { src: 'angular2/bundles/router.js', inject: 'libs', dest: JS_DEST },
   { src: 'angular2/bundles/http.js', inject: 'libs', dest: JS_DEST },
-  { src: 'bootstrap/dist/css/bootstrap.css', inject: true, dest: CSS_DEST }
+  { src: 'ng2-material/dist/ng2-material.css', inject: true, dest: CSS_DEST },
+  { src: 'ng2-material/dist/font.css', inject: true, dest: CSS_DEST }
 ]);
 
 export const PROD_NPM_DEPENDENCIES: InjectableDependency[] = normalizeDependencies([
   { src: 'reflect-metadata/Reflect.js', inject: 'shims' },
   { src: 'es6-shim/es6-shim.min.js', inject: 'shims' },
   { src: 'angular2/bundles/angular2-polyfills.min.js', inject: 'libs' },
-  { src: 'bootstrap/dist/css/bootstrap.min.css', inject: true }
+  { src: 'ng2-material/dist/ng2-material.css', inject: 'libs'},
+  { src: 'ng2-material/dist/font.css', inject: 'libs' }
 ]);
 
 // Declare local files that needs to be injected
@@ -89,6 +91,7 @@ const SYSTEM_CONFIG_DEV = {
   paths: {
     [BOOTSTRAP_MODULE]: `${APP_BASE}${BOOTSTRAP_MODULE}`,
     'angular2/*': `${APP_BASE}angular2/*`,
+    'ng2-material/*': `${APP_BASE}ng2-material/*`,
     'rxjs/*': `${APP_BASE}rxjs/*`,
     '*': `${APP_BASE}node_modules/*`
   },
