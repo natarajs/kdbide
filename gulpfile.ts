@@ -40,6 +40,7 @@ gulp.task('build.prod', done =>
               'build.js.prod',
               'build.bundles',
               'build.index.prod',
+              'build.fonts.prod',
               done));
 
 // --------------

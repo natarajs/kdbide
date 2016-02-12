@@ -16,7 +16,9 @@
   <!-- shims:js -->
   <!-- endinject -->
 
+  <% if (ENV === 'dev') { %>
   <script>System.config(<%= JSON.stringify(SYSTEM_CONFIG) %>)</script>
+  <% } %>
 
   <!-- libs:js -->
   <!-- endinject -->
@@ -24,13 +26,15 @@
   <!-- inject:js -->
   <!-- endinject -->
 
+<% if (ENV === 'dev') { %>
   <script>
-    System.import('main')
+    System.import('<%= BOOTSTRAP_MODULE %>')
       .catch(function (e) {
         console.error(e,
           'Report this error at https://github.com/mgechev/angular2-seed/issues');
       });
   </script>
+  <% } %>
 
 </body>
 </html>
