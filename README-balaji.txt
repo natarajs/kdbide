@@ -8,12 +8,6 @@ https://gist.githubusercontent.com/mshafrir/2646763/raw/8b0dbb93521f5d6889502305
 COMPARIOSN url dataprep vs original angular2-seed
 https://github.com/balajic/dataprep/compare/master...mgechev:master?diff=split&name=master#diff-02aeed42126d9e2bd48df8e67b14fe98
 
-Notes:
-build.assets.prod.ts -> is the one copies the assets folder.. Excludes the .css, .ts & .js. Everything gets copied into APP_SRC folder
- 
-
-
-
 =======================================================================================================================================
 Fixing the Build issue in ng2-material fork
 =======================================================================================================================================
@@ -40,3 +34,16 @@ npm install
 npm run build.prod
 
 =======================================================================================================================================
+Notes:
+=======================================================================================================================================
+Look at the new index.html. It uses System.js only for dev.. For production everything including templates html compiled into one .js file
+
+"build.prod" All the tasks listed under this is defined in tools\task folder under seoparate file.
+
+build.assets.prod.ts -> is the one copies the assets folder.. Excludes the .css, .ts & .js. Everything gets copied into APP_SRC folder
+
+addding a new gulp task (Example copying the font file)
+   create a file like build.prod.font.ts under tools\tasks and call the same in gulp "build.prod" task sequence.
+   alter tavively you can as well add task directly in gulp.ts and call the same in "build.prod" task
+  
+
