@@ -62,8 +62,11 @@ export const DEV_NPM_DEPENDENCIES: InjectableDependency[] = normalizeDependencie
   { src: 'angular2/bundles/angular2.js', inject: 'libs', dest: JS_DEST },
   { src: 'angular2/bundles/router.js', inject: 'libs', dest: JS_DEST },
   { src: 'angular2/bundles/http.js', inject: 'libs', dest: JS_DEST },
+  { src: 'ag-grid/dist/ag-grid.js', inject: 'libs', dest: JS_DEST },
   { src: 'ng2-material/dist/ng2-material.css', inject: true, dest: CSS_DEST },
-  { src: 'ng2-material/dist/font.css', inject: true, dest: CSS_DEST }
+  { src: 'ng2-material/dist/font.css', inject: true, dest: CSS_DEST },
+  { src: 'ag-grid/dist/ag-grid.css', inject: true, dest: CSS_DEST },
+  { src: 'ag-grid/dist/theme-fresh.css', inject: true, dest: CSS_DEST }
 ]);
 
 export const PROD_NPM_DEPENDENCIES: InjectableDependency[] = normalizeDependencies([
@@ -91,7 +94,8 @@ const SYSTEM_CONFIG_DEV = {
   paths: {
     [BOOTSTRAP_MODULE]: `${APP_BASE}${BOOTSTRAP_MODULE}`,
     'angular2/*': `${APP_BASE}angular2/*`,
-    'ng2-material/*': `${APP_BASE}ng2-material/*`,
+//    'ng2-material/*': `${APP_BASE}ng2-material/*`,
+    'ng2-material/*': 'node_modules/ng2-material/*',
     'rxjs/*': `${APP_BASE}rxjs/*`,
     '*': `${APP_BASE}node_modules/*`
   },

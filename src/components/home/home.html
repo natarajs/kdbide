@@ -1,12 +1,77 @@
 <md-card layout-margin>
-  <md-card-title>
-    <md-card-title-text>
-      <span class="md-headline">Data Filter</span>
-    </md-card-title-text>
-  </md-card-title>
-  <md-card-content>
-    <p>
-      Your deployment of Angular 2 Seed worked perfectly!
-    </p>
-  </md-card-content>
+   
+  <md-content layout-padding>
+  
+          <form [ngFormModel]="myForm" 
+          (ngSubmit)="onSubmit(myForm.value)"
+          class="ui form">
+
+          <div layout-gt-sm="row">
+
+        <md-input-container class="md-block">
+        <label for="kdbURL">Server</label>
+        <input md-input ngControl="kdbURL" id="kdbURL" [(ngModel)]="kdbConnect.server" >
+        <div md-messages="kdbURL">
+          <div md-message="required">This is required.</div>
+        </div>
+        </md-input-container>
+      
+        <md-input-container class="md-block">
+        <label for="port">Port</label>
+        <input md-input ngControl="port" id="port" [(ngModel)]="kdbConnect.port" #port >
+        <div md-messages="port" role="alert">
+          <div md-message="required">This is required.</div>
+<!--
+         <div md-message="mdMin">
+            Port has to be above 80.
+          </div>
+          <div md-message="mdPattern">
+            Please enter a valid number
+          </div>
+          <div md-message="mdMax">
+             Port number is too high
+          </div>
+-->
+        </div>
+        </md-input-container>
+  
+        </div>
+
+        <div layout-gt-sm="row">
+
+        <md-input-container class="md-block">
+        <label for="kdbQuery">Query</label>
+        <input md-input style="width:100%" ngControl="kdbQuery" id="kdbQuery" [(ngModel)]="kdbConnect.query" [value]="kdbConnect.query">
+        <div md-messages="kdbQuery">
+          <div md-message="required">This is required.</div>
+        </div>
+        </md-input-container>
+
+        </div>
+
+  
+<!--
+       <md-input-container class="md-block">
+        <label for="description">Description</label>
+        <input md-input ngControl="description" id="description" [(value)]="kdbConnect.description">
+        <div md-messages="description">
+          <div md-message="required">This is required.</div>
+          <div md-message="maxlength">The name has to be less than 30 characters long.</div>
+        </div>
+      </md-input-container>
+
+      <div *ngIf="!myForm.valid"
+        class="ui error message">Form is invalid</div>
+ --> 
+      <button  class="ui button">Connect</button>
+  
+    </form>
+  </md-content>
+
+
+
 </md-card>
+
+<grid1 #grid1></grid1>
+   <simple-http #http1></simple-http>
+ 
