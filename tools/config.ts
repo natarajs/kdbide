@@ -74,7 +74,10 @@ export const PROD_NPM_DEPENDENCIES: InjectableDependency[] = normalizeDependenci
   { src: 'es6-shim/es6-shim.min.js', inject: 'shims' },
   { src: 'angular2/bundles/angular2-polyfills.min.js', inject: 'libs' },
   { src: 'ng2-material/dist/ng2-material.css', inject: 'libs'},
-  { src: 'ng2-material/dist/font.css', inject: 'libs' }
+  { src: 'ng2-material/dist/font.css', inject: 'libs' },
+  { src: 'ag-grid/dist/ag-grid.js', inject: 'libs'},
+  { src: 'ag-grid/dist/ag-grid.css', inject: true, dest: CSS_DEST },
+  { src: 'ag-grid/dist/theme-fresh.css', inject: true, dest: CSS_DEST }
 ]);
 
 // Declare local files that needs to be injected
